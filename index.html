@@ -2,7 +2,7 @@
   <head>
 	<meta charset="UTF-8">
 	<title>Meu Cuidador - Plano de Prevenção</title>
-	<link rel="manifest" href="/manifest.json">
+	<link rel="manifest" href="/meucuidador-plano-prevencao/manifest.json">
     <!-- Material Design Lite -->
     <script src="assets/material.min.js"></script>
     <link rel="stylesheet" href="assets/material.min.css">
@@ -32,32 +32,16 @@
 		});
 		if ('serviceWorker' in navigator) {
 			window.addEventListener('load', function() {			
-				var CACHE_NAME = 'meu-cuidador';
-				var urlsToCache = [
-					'/meucuidador-plano-prevencao/',
-					'/meucuidador-plano-prevencao/index.html',
-					'/meucuidador-plano-prevencao/assets/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2',
-					'/meucuidador-plano-prevencao/assets/imc.png',
-					'/meucuidador-plano-prevencao/assets/jquery-3.2.1.min.js',
-					'/meucuidador-plano-prevencao/assets/material.min.css',
-					'/meucuidador-plano-prevencao/assets/material.min.js',
-					'/meucuidador-plano-prevencao/assets/material+icon.css'
-				];
-				
 				navigator.serviceWorker.register('/meucuidador-plano-prevencao/sw.js').then(function(registration) {
 					// Registration was successful
 					console.log('ServiceWorker registration successful with scope: ', registration.scope);
-					self.addEventListener('install', function(event) {
-						// Perform install steps
-						console.log("install sw");
-						  event.waitUntil(
-							caches.open(CACHE_NAME)
-							  .then(function(cache) {
-								console.log('Opened cache');
-								return cache.addAll(urlsToCache);
-							  })
-						  );
-					});
+					if(registration.installing) {
+						console.log('Service worker installing');
+					} else if(registration.waiting) {
+						console.log('Service worker installed');
+					} else if(registration.active) {
+						console.log('Service worker active');
+					}
 				}).catch(function(err) {
 					// registration failed :(
 					console.log('ServiceWorker registration failed: ', err);
