@@ -1,1 +1,191 @@
-<html><body><h1>Hello World</h1></body></html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>Meu Cuidador - Plano de Prevenção</title>
+	<link rel="manifest" href="/manifest.json">
+    <!-- Material Design Lite -->
+    <script src="assets/material.min.js"></script>
+    <link rel="stylesheet" href="assets/material.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="assets/material+icon.css">
+	<script src="assets/jquery-3.2.1.min.js"></script>
+	<style>
+		.material-icons	{
+			font-size: 46px !important;
+		}
+		[src='assets/imc.png'] {
+			width: 75%
+		}
+		.hide {
+			display: none;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("a.mdl-navigation__link").on("click", function(e) {
+				$("#content > div:visible").addClass("hide");
+				$($(this).attr("href")).removeClass("hide");
+				$(".mdl-layout__drawer").removeClass("is-visible");
+				$(".mdl-layout__obfuscator").removeClass("is-visible");
+				e.preventDefault();
+			})
+		});
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {			
+				var CACHE_NAME = 'meu-cuidador';
+				var urlsToCache = [
+					'/meucuidador-plano-prevencao/',
+					'/meucuidador-plano-prevencao/index.html',
+					'/meucuidador-plano-prevencao/assets/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2',
+					'/meucuidador-plano-prevencao/assets/imc.png',
+					'/meucuidador-plano-prevencao/assets/jquery-3.2.1.min.js',
+					'/meucuidador-plano-prevencao/assets/material.min.css',
+					'/meucuidador-plano-prevencao/assets/material.min.js',
+					'/meucuidador-plano-prevencao/assets/material+icon.css'
+				];
+				
+				navigator.serviceWorker.register('/meucuidador-plano-prevencao/sw.js').then(function(registration) {
+					// Registration was successful
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+					self.addEventListener('install', function(event) {
+						// Perform install steps
+						console.log("install sw");
+						  event.waitUntil(
+							caches.open(CACHE_NAME)
+							  .then(function(cache) {
+								console.log('Opened cache');
+								return cache.addAll(urlsToCache);
+							  })
+						  );
+					});
+				}).catch(function(err) {
+					// registration failed :(
+					console.log('ServiceWorker registration failed: ', err);
+				});
+			});
+		}
+	</script>
+  </head>
+  <body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header mdl-layout__header--scroll">
+			<div class="mdl-layout__header-row">
+			  <!-- Title -->
+			  <span class="mdl-layout-title">Meu Cuidador</span>
+			  <!-- Add spacer, to align navigation to the right -->
+			  <div class="mdl-layout-spacer"></div>
+			</div>
+		</header>
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">Meu Cuidador</span>
+			<nav class="mdl-navigation">
+			  <a class="mdl-navigation__link" href="#principal">Principal</a>
+			  <a class="mdl-navigation__link" href="#peso">Controle de Peso</a>
+			  <a class="mdl-navigation__link" href="#alimentacao">Orientações para alimentação saudável</a>
+			  <a class="mdl-navigation__link" href="#alcool">Moderação no consumo de álcool</a>
+			  <a class="mdl-navigation__link" href="#atividade">Atividade Física</a>
+			  <a class="mdl-navigation__link" href="#colesterol">Redução do colesterol</a>
+			  <a class="mdl-navigation__link" href="#pressao">Controle da pressão arterial</a>
+			  <a class="mdl-navigation__link" href="#tabagismo">Abandono do tabagismo</a>
+			  <a class="mdl-navigation__link" href="#medicamentos">Uso de medicamentos</a>
+			</nav>
+		</div>
+		<main class="mdl-layout__content">		  
+			<div id="content" class="page-content mdl-color--white content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+				<div id="principal">
+					<h3>Principal</h3>
+					<p>
+						As artérias coronárias fornecem a seu coração sangue rico em oxigênio. Estágios avançados de entupimento destas artérias podem causar sérias complicações, inclusive a morte. O acúmulo de placas de gordura nas coronárias pode ser diminuído ou impedido, através do desenvolvimento de um plano de cuidados adequado para você. Isto inclui desde hábitos saudáveis como exercícios físicos e uma dieta equilibrada, até a adesão aos medicamentos prescritos. 
+					</p>
+					<p>
+						Você recentemente implantou no seu coração, em uma de suas coronárias, um stent, que é uma prótese endovascular que ajudará a manter ela desobstruída. Porém para evitar complicações futuras é fundamental que você estabeleça cuidados importantes com a sua saúde. Desta forma, você está recendo um plano de cuidados para a prevenção de complicações, sendo que a sua adesão a este tratamento é fundamental para limitar a progressão da doença coronariana.
+					</p>					
+				</div>
+				<div id="peso" class="hide">
+					<h3>Controle de Peso</h3>
+					<ul>
+						<li>Mantenha o seu peso saudável. O excesso de peso contribui para o desenvolvimento de doença cardiovascular</li>
+						<li>Você deve pesar-se regularmente (ao menos uma vez ao mês), como forma de manter controle de seu peso. O ideal é que você tenha um peso proporcional à sua altura, mantendo um IMC (índice de massa corporal) entre 18,5 a 24,9 kg/m2. Você mesmo pode calcular este índice por meio da divisão do seu peso pelo quadrado de sua altura, em que o peso está em quilogramas e a altura em metros</li>
+					</ul>
+					<img src="assets/imc.png">
+				</div>
+				<div id="alimentacao" class="hide">
+					<h3>Orientações para alimentação saudável</h3>
+					<ul>
+						<li>Distribua as refeições ao longo do dia, com pelo menos três refeições (café da manhã, almoço e jantar) e dois lanches saudáveis. Evite pular pule as refeições e comer entre elas.</li>
+						<li>Priorize carboidratos complexos (ex., arroz, pão, massa e cereais), em especial na sua forma integral. Minimizar o consumo de carboidratos simples, em especial os refinados.</li>
+						<li>Ficar atento aos rótulos dos alimentos e escolha aqueles com menores quantidades de gorduras trans.</li>
+						<li>Evite refrigerantes e sucos industrializados, bolos, biscoitos doces e recheados, sobremesas doces e outras guloseimas.</li>
+						<li>Dê preferência ao consumo de água nos intervalos das refeições.</li>
+						<li>Consuma diariamente pelo menos três porções de frutas e hortaliças (uma porção = 1 laranja média, 1 maçã média ou 1 fatia média de abacaxi). Dê preferência a alimentos integrais como pães, cereais e massas, pois são ricos em fibras, vitaminas e minerais.</li>
+						<li>Ingerir arroz com feijão diariamente ou pelo menos cinco dias por semana, por serem ricos em proteína vegetal.</li>
+						<li>O consumo de amendoim, castanhas, nozes e sementes, é uma boa opção de lanches ou como ingredientes de diferentes preparações.</li>
+						<li>Retire, sempre que possível, a gordura visível dos alimentos.</li>
+						<li>Procure usar o mínimo de sal no preparo dos alimentos. Leia sempre o rótulo dos alimentos verificando a quantidade de sódio presente (limite diário: 2.000 mg de sódio). A quantidade considerada máxima saudável para a ingestão alimentar diária de cloreto de sódio (sal de cozinha) é de 5 g de (que corresponde a 2 g de sódio). Na prática, recomenda¬-se o consumo de, no máximo, 3 colheres de café rasas (3 g), que somados aos 2 g de sal já existentes nos próprios alimentos contemplaria o total de 5 g.</li>
+						<li>Alimentos industrializados como embutidos (salsicha, salame, presunto, linguiça e bife de hambúrguer), enlatados (milho, palmito, ervilha etc.), molhos (ketchup, mostarda, maionese etc.) e carnes salgadas (bacalhau, charque, carne seca e defumados) devem ser evitados, porque são ricos em gordura e sal.</li>
+					</ul>
+				</div>
+				<div id="alcool" class="hide">
+					<h3>Moderação no consumo de álcool</h3>
+					<ul>
+						<li>Evite a ingestão excessiva de álcool.</li>
+						<li>Limite a ingestão diária de bebidas alcoólicas para não mais de 30 g/dia de etanol para homens (625 ml de cerveja, um pouco menos de duas latas; 93,7 ml de uísque, pouco menos de duas doses; 312,5 ml de vinho) e 15 g/dia para mulheres e pessoas magras.</li>
+					</ul>
+				</div>
+				<div id="atividade" class="hide">
+					<h3>Atividade Física</h3>
+					<ul>
+						<li>A prática regular de exercícios físicos traz inúmeros benefícios, sendo fundamental para a redução do seu risco cardiovascular.</li>
+						<li>Faça pelo menos 30 minutos de atividade física todos os dias com orientação de um profissional capacitado, no mínimo cinco dias por semana.</li>
+					</ul>
+				</div>
+				<div id="colesterol" class="hide">
+					<h3>Redução do colesterol<h3>
+					<ul>
+						<li>Um elemento importante do seu plano de cuidados envolve saber o seu nível de colesterol no sangue.</li>
+						<li>Perder peso de ele estiver acima do recomendado para você, fazer atividade física, manter bons hábitos alimentares e usar a medicação que seu médico prescrever, ajudam a reduzir o colesterol.</li>
+						<li>Reduza o seu colesterol "ruim" (LDL) e aumente o seu colesterol "bom" (HDL). A sua meta é: 
+							<ul>
+								<li>manutenção o LDL-c ≤ 70 mg/dL</li>
+								<li>manutenção do colesterol não HDL ≤100 mg/dL</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="pressao" class="hide">
+					<h3>Controle da pressão arterial</h3>
+					<ul>
+						<li>A hipertensão arterial sistêmica (HAS) é o mais importante fator de risco para o desenvolvimento de doença arterial coronariana, insuficiência cardíaca, doença cerebrovas¬cular, doença renal crônica e fibrilação atrial.</li>
+						<li>Mantenha controle periódico da sua pressão, verificando seus valores ao menos uma vez por semana e anote para levar ao médico em sua próxima consulta.</li>
+					</ul>
+				</div>
+				<div id="tabagismo" class="hide">
+					<h3>Abandono do tabagismo</h3>
+					<ul>
+						<li>Se você é fumante, abandone este hábito imediatamente. O fumo só aumenta suas chances de adoecimento.</li>
+						<li>Peça ajuda para parar de fumar se não conseguir sozinho, há tratamentos disponíveis que o ajudarão.</li>
+					</ul>
+				</div>
+				<div id="medicamentos" class="hide">
+					<h3>Uso de medicamentos</h3>
+					<ul>
+						<li>Você receberá receita médica com a prescrição de medicamentos importantes em anexo a este plano de cuidados, que deverão ser usados todos os dias e por tempo indeterminado. Os principais deles são:
+							<ul>
+								<li>antiagregantes plaquetários: o uso destes medicamentos ajudará a impedir a formação de trombos (“coágulos”) que podem provocar o entupimento de suas artérias.</li>
+								<li>betabloqueadores: ajudarão a controlar a sua pressão arterial e frequência cardíaca</li>
+								<li>estatinas: são importantes para o controle do colesterol</li>
+								<li>IECAs (inibidores da enzima conversora de angiotensina): ajudarão também no controle da sua pressão arterial.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>				
+			</div>
+		</main>
+		<footer class="mdl-mega-footer">  
+			<div class="mdl-mega-footer__bottom-section">
+				<div class="mdl-logo">“Viver mais e melhor, é uma escolha que você faz!”</div>
+			</div>
+		</footer>
+	</div>
+  </body>
+</html>
