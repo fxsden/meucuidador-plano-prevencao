@@ -1,10 +1,10 @@
-{
-  "name": "Meu Cuidador - Plano de PrevenÁ„o",
+Ôªø{
+  "name": "Meu Cuidador - Plano de Preven√ß√£o",
   "short_name": "Meu Cuidador",
   "start_url": "/meucuidador-plano-prevencao/index.html",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "Plano de cuidados para prevenÁ„o secund·ria da doenÁa arterial coronariana apÛs realizaÁ„o de angioplastia.",
+  "description": "Plano de cuidados para preven√ß√£o secund√°ria da doen√ßa arterial coronariana ap√≥s realiza√ß√£o de angioplastia.",
   "orientation": "portrait",
   "icons": [{
     "src": "assets/ic_launcher48x48.png",
