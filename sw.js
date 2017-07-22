@@ -17,6 +17,7 @@ var cacheName = 'meu-cuidadorPWA-final-1';
 var filesToCache = [
 	'/meucuidador-plano-prevencao/',
 	'/meucuidador-plano-prevencao/index.html',
+	'/meucuidador-plano-prevencao/manifest.json',
 	'/meucuidador-plano-prevencao/assets/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2',
 	'/meucuidador-plano-prevencao/assets/imc.png',
 	'/meucuidador-plano-prevencao/assets/jquery-3.2.1.min.js',
@@ -61,34 +62,15 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-  console.log('[Service Worker] Fetch', e.request.url);
-  var dataUrl = 'https://query.yahooapis.com/v1/public/yql';
-  if (e.request.url.indexOf(dataUrl) > -1) {
-    /*
-     * When the request URL contains dataUrl, the app is asking for fresh
-     * weather data. In this case, the service worker always goes to the
-     * network and then caches the response. This is called the "Cache then
-     * network" strategy:
-     * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
-     */
-    e.respondWith(
-      caches.open(dataCacheName).then(function(cache) {
-        return fetch(e.request).then(function(response){
-          cache.put(e.request.url, response.clone());
-          return response;
-        });
-      })
-    );
-  } else {
-    /*
-     * The app is asking for app shell files. In this scenario the app uses the
-     * "Cache, falling back to the network" offline strategy:
-     * https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
-     */
-    e.respondWith(
-      caches.match(e.request).then(function(response) {
-        return response || fetch(e.request);
-      })
-    );
-  }
+	console.log('[Service Worker] Fetch', e.request.url);
+	/*
+	 * The app is asking for app shell files. In this scenario the app uses the
+	 * "Cache, falling back to the network" offline strategy:
+	 * https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
+	 */
+	e.respondWith(
+	  caches.match(e.request).then(function(response) {
+		return response || fetch(e.request);
+	  })
+	);  
 });
