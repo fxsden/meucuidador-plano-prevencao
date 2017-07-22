@@ -23,7 +23,12 @@ var filesToCache = [
 	'/meucuidador-plano-prevencao/assets/jquery-3.2.1.min.js',
 	'/meucuidador-plano-prevencao/assets/material.min.css',
 	'/meucuidador-plano-prevencao/assets/material.min.js',
-	'/meucuidador-plano-prevencao/assets/material+icon.css'
+	'/meucuidador-plano-prevencao/assets/material+icon.css',
+	'/meucuidador-plano-prevencao/assets/ic_launcher48x48.png',
+	'/meucuidador-plano-prevencao/assets/ic_launcher72x72.png',
+	'/meucuidador-plano-prevencao/assets/ic_launcher96x96.png',
+	'/meucuidador-plano-prevencao/assets/ic_launcher144x144.png',
+	'/meucuidador-plano-prevencao/assets/ic_launcher192x192.png'
 ];
 
 self.addEventListener('install', function(e) {
