@@ -28,7 +28,7 @@ var filesToCache = [
 	'/meucuidador-plano-prevencao/assets/ic_launcher72x72.png',
 	'/meucuidador-plano-prevencao/assets/ic_launcher96x96.png',
 	'/meucuidador-plano-prevencao/assets/ic_launcher144x144.png',
-	'/meucuidador-plano-prevencao/assets/ic_launcher192x192.png'
+	'/meucuidador-plano-prevencao/assets/ic_launcher192x192.png',
 	'/meucuidador-plano-prevencao/assets/ic_launcher512x512.png'
 ];
 
