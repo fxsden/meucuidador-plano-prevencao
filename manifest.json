@@ -1,31 +1,30 @@
-﻿{
-  "name": "Meu Cuidador - Plano de Prevenção",
-  "short_name": "Meu Cuidador",
-  "start_url": "/meucuidador-plano-prevencao/index.html",
-  "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#009688",
-  "description": "Plano de cuidados para prevenção secundária da doença arterial coronariana após realização de angioplastia.",
-  "orientation": "portrait",
-  "icons": [{
-    "src": "assets/ic_launcher48x48.png",
-    "sizes": "48x48",
-    "type": "image/png"
-  }, {
-    "src": "assets/ic_launcher72x72.png",
-    "sizes": "72x72",
-    "type": "image/png"
-  }, {
-    "src": "assets/ic_launcher96x96.png",
-    "sizes": "96x96",
-    "type": "image/png"
-  }, {
-    "src": "assets/ic_launcher144x144.png",
-    "sizes": "144x144",
-    "type": "image/png"
-  }, {
-    "src": "assets/ic_launcher192x192.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  }]
+{
+	"name": "Meu Cuidador - Plano de Prevenção",
+	"short_name": "Meu Cuidador",
+	"icons": [{
+		"src": "assets/ic_launcher48x48.png",
+		"type": "image/png",
+		"sizes": "48x48"
+	}, {
+		"src": "assets/ic_launcher72x72.png",
+		"type": "image/png",
+		"sizes": "72x72"
+	}, {
+		"src": "assets/ic_launcher96x96.png",
+		"type": "image/png",
+		"sizes": "96x96"
+	}, {
+		"src": "assets/ic_launcher144x144.png",
+		"type": "image/png",
+		"sizes": "144x144"
+	}, {
+		"src": "assets/ic_launcher192x192.png",
+		"type": "image/png",
+		"sizes": "192x192"
+	}],
+	"start_url": "/meucuidador-plano-prevencao/index.html",
+	"display": "standalone",
+	"background_color": "#fff",
+	"theme_color": "#009688",
+	"orientation": "portrait"
 }
