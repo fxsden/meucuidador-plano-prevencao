@@ -1,7 +1,7 @@
 {
   "name": "Meu Cuidador - Plano de Prevenção",
   "short_name": "Meu Cuidador",
-  "start_url": "/meucuidador-plano-prevencao/.",
+  "start_url": "/meucuidador-plano-prevencao/index.html",
   "display": "standalone",
   "background_color": "#fff",
   "description": "Plano de cuidados para prevenção secundária da doença arterial coronariana após realização de angioplastia.",
