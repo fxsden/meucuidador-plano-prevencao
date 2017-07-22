@@ -21,6 +21,10 @@
 		"src": "assets/ic_launcher192x192.png",
 		"type": "image/png",
 		"sizes": "192x192"
+	}, {
+		"src": "assets/ic_launcher512x512.png",
+		"type": "image/png",
+		"sizes": "512x512"
 	}],
 	"start_url": "/meucuidador-plano-prevencao/index.html",
 	"display": "standalone",
