@@ -14,10 +14,10 @@
 
 var dataCacheName = 'meu-cuidador-v1';
 var cacheName = 'meu-cuidadorPWA-final-1';
+/*	'/meucuidador-plano-prevencao/manifest.json',*/
 var filesToCache = [
 	'/meucuidador-plano-prevencao/',
 	'/meucuidador-plano-prevencao/index.html',
-	'/meucuidador-plano-prevencao/manifest.json',
 	'/meucuidador-plano-prevencao/assets/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2',
 	'/meucuidador-plano-prevencao/assets/imc.png',
 	'/meucuidador-plano-prevencao/assets/jquery-3.2.1.min.js',
